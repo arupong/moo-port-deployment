@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="1_Online_portfolio_CSS.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+      <a class="navbar-brand" href="{% url 'first_app:home' %}">Arupong Kongsakul</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav">
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'first_app:cert' %}">Certificate</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'first_app:c4game' %}">Game(ConnectFour)</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Project
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">DataSci Lab</a>
+              <a class="dropdown-item" href="#">AI Lab</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">incoming side proj</a>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </nav>
+
+
+
+
+    <br><br><br>
+
+    <div class="animate"></div>
+    <div class="container">
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{% static 'images/stem4.jpg' %}" alt="First slide" style="max-width:40%; max-height:40%;  display: block; margin-left: auto; margin-right: auto">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'images/mystem.jpg' %}" alt="Second slide" style="max-width:72.3%; max-height:72.3%; display: block; margin-left: auto; margin-right: auto">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'images/japan1.jpg' %}" alt="Third slide" style="max-width:72.3%; max-height:72.3%; display: block; margin-left: auto; margin-right: auto">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'images/japan6.jpg' %}" alt="Third slide" style="max-width:64.75%; max-height:64.75%; display: block; margin-left: auto; margin-right: auto">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'images/present mao.jpg' %}" alt="Third slide" style="max-width:72.3%; max-height:72.3%; display: block; margin-left: auto; margin-right: auto">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'images/ราชบุรี.jpg' %}" alt="Third slide" style="max-width:64.25%; max-height:64.25%; display: block; margin-left: auto; margin-right: auto">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<br>
+    <div class="DivPg1">
+      <p id="pg1"><span id="SpanName">Name</span>: Arupong Kongsakul</p>
+      <p id="pg2"><span id="SpanDate">Date of birth</span>: 20/01/2000</p>
+      <p id="pg3"><span id="SpanMotto">Motto</span>: If you belive, you can achieve</p>
+      <p id="pg4"><span id="SpanColor">Color</span>: blue, black</p>
+    </div>
+
+    <p></p><br>
+
+    <div class="jumbotron">
+  <h1 class="display-4">Hello, Teacher</h1>
+  <p class="lead">This is my simple online-portfolio, feel free to look at this thing</p>
+  <hr class="my-4">
+  <p>I know it's look silly and pretty less, but i have put my heart into this. Nevertheless, feel free to comment</p>
+</div>
+
+    <p>
+  <button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Skills
+  </button>
+    </p>
+<div class="row" style="margin:0 auto;">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-2"></div>
+  <div class="col-xs-2"></div>
+  <div class="col-xs-2"></div>
+  <div class="col-xs-2"></div>
+  <div class="col-xs-2"></div>
+    <div class="collapse" id="collapseExample" style="margin:0 auto;">
+      <div class="card card-body">
+          <table border="1">
+            <thead>
+              <th><img src="https://www.python.org/static/opengraph-icon-200x200.png" alt="" height="100" width="100"></th>
+              <th><img src="http://tinygiantstudios.co.za/wp-content/uploads/2014/01/html5logo-new.jpg" alt="" height="100" width="100"></th>
+              <th><img src="https://www.damiencosset.com/wp-content/uploads/2017/11/CSS3.jpg" alt="" height="100" width="100"></th>
+              <th><img src="https://www.javatpoint.com/images/javascript/javascript_logo.png" alt="" height="100" width="100"></th>
+              <th><img src="http://www.desartlab.com/wp-content/uploads/2015/10/jquery_logo.gif" alt="" height="100" width="100"></th>
+            </thead>
+            <tr>
+              <td id="Td1">5/10</td>
+              <td id="Td2">5/10</td>
+              <td id="Td3">5/10</td>
+              <td id="Td4">5/10</td>
+              <td id="Td5">5/10</td>
+            </tr>
+          </table>
+
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">python</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">HTML</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">CSS</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">JS</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">jQuery</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+      <h3><span id="SpanDoQuiz">Let's do some quiz</span></h3>
+
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#exampleModalCenter">
+    Lighting Question
+      </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Lighting Question</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure about this?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Chicken</button>
+          <a class="btn btn-success" href="{% url 'first_app:lightQuiz' %}">Bring it on</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+    </div>
+
+
+    <style>
+    body{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    animation: ChangeBG 8s infinite;
+  }
+
+  @keyframes ChangeBG {
+        0%  {background-color:#f9a4a4;}
+       20%  {background-color:#f9efa4;}
+       40%  {background-color:#bcf9a4;}
+       60%  {background-color:#a4f9ec;}
+       80%  {background-color:#b0a4f9;}
+      100%  {background-color:#f9a4a4;}
+  }
+
+
+  @keyframes aroundpig {
+    0%  {background-color:red; left:0%; top:0px;}
+   50%  {background-color:yellow; left:100%; top:0px;}
+  100%  {background-color:blue; left:0%; top:0px;}
+  }
+
+  .animate {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      background-color: red;
+      border-radius: 50%;
+      animation-name: aroundpig;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  #MP{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #SpanName{
+    font-weight: bold;
+  }
+  #SpanDate{
+    font-weight: bold;
+  }
+  #SpanMotto{
+    font-weight: bold;
+  }
+  #SpanColor{
+    font-weight: bold;
+  }
+
+  @keyframes ChangeBGPG {
+        0%  {background-color:#4f1313;}
+       20%  {background-color:#3a4f11;}
+       40%  {background-color:#114f34;}
+       60%  {background-color:#11334f;}
+       80%  {background-color:#35114f;}
+      100%  {background-color:#4f1313;}
+  }
+  .DivPg1{
+    color: white;
+    border: 6px inset red;
+    border-left-style: dotted;
+    border-right-style: dotted;
+    width: 310px;
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: ChangeBGPG;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+
+
+  #Td1{
+    background: black;
+    color: white;
+  }
+  #Td2{
+    background: black;
+    color: white;
+  }
+  #Td3{
+    background: black;
+    color: white;
+  }
+  #Td4{
+    background: black;
+    color: white;
+  }
+  #Td5{
+    background: black;
+    color: white;
+  }
+
+    </style>
+
+
+  </body>
+</html>

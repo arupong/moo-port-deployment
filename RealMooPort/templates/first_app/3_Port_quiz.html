@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>quiz</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+    <div class="bg"></div>
+    <div class="lightning flashit"></div>
+    <style>
+
+    body{
+      color: white;
+    }
+
+    .bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.alphacoders.com/201/201751.jpg');
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -2;
+}
+
+/* Now the same background, but with brightness filters*/
+.lightning{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.alphacoders.com/201/201751.jpg');
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-filter: brightness(3);
+  filter: brightness(3);
+  -o-filter: brightness(3);
+  -moz-filter: brightness(3);
+  z-index: -1;
+}
+
+/*Now just a opacity animation*/
+.flashit{
+-webkit-animation: flash ease-out 5s infinite;
+-moz-animation: flash ease-out 5s infinite;
+animation: flash ease-out 5s infinite;
+}
+
+@-webkit-keyframes flash {
+	from { opacity: 0; }
+  92% { opacity: 0; }
+	93% { opacity: 0.6; }
+  94% { opacity: 0.2; }
+  96% { opacity: 0.9; }
+	to { opacity: 0; }
+}
+
+@keyframes flash {
+	from { opacity: 0; }
+    92% { opacity: 0; }
+	93% { opacity: 0.6; }
+    94% { opacity: 0.2; }
+    96% { opacity: 1; }
+	to { opacity: 0; }
+}
+/*End! is that simple! */
+}
+
+@-webkit-keyframes flash {
+	from { opacity: 0; }
+  92% { opacity: 0; }
+	93% { opacity: 0.6; }
+  94% { opacity: 0.2; }
+  96% { opacity: 0.9; }
+	to { opacity: 0; }
+}
+
+@keyframes flash {
+	from { opacity: 0; }
+  92% { opacity: 0; }
+	93% { opacity: 0.6; }
+  94% { opacity: 0.2; }
+  96% { opacity: 1; }
+	to { opacity: 0; }
+}
+
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <a class="navbar-brand" href="{% url 'first_app:home' %}">Arupong Kongsakul</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'first_app:home' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'first_app:cert' %}">Certificate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'first_app:c4game' %}">Game(ConnectFour)</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br><br><br>
+    <div class="container">
+
+    <h1>ปริศนาฟ้าแลบ</h1>
+
+    <form method="get" action="1_Online_portfolio.html">
+
+      <label for="username"><b>Username:</b></label>
+      <input id="username" type="text" name="Username" placeholder="Username">
+
+        <p>1.Is a boy in front of you look handsome
+        (or cute...whatever!) more than you?</p>
+        <label for="y">Yes</label>
+        <input id="y" type="radio" name="Boy" value="yes">
+        <p></p>
+        <label for="n">No</label>
+        <input id="n" type="radio" name="Boy" value="no">
+
+        <p>2.Do you think what it's his free-time activity? </p>
+        <select name="opt">
+          <option value="learn">Learning</option>
+          <option value="sleep">Sleeping</option>
+          <option value="read">Reading</option>
+          <option value="all">All of the above</option>
+        </select>
+
+        <p>3.Any comment?</p>
+        <textarea name="text" placeholder="Such a good boy, you little pig!!!, etc."
+         rows="8" cols="80"></textarea>
+
+         <p></p>
+        <input id="send" type="submit" name="Submit" value="Send">
+
+      </div>
+    </form>
+
+    <script src="3_quiz.js" charset="utf-8"></script>
+
+  </body>
+</html>

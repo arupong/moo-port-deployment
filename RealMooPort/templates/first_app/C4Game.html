@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Connect Four</title>
+
+
+    <link rel="stylesheet" href="1_Online_portfolio_CSS.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #59d0ff;">
+      <a class="navbar-brand" href="{% url 'first_app:home' %}">Arupong Kongsakul</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'first_app:home' %}">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="C:\Users\computer\Desktop\Online course\Web developement\HTML\2_Certification.html">Certificate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'first_app:c4game' %}">Game(ConnectFour)</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<br><br><br>
+    <div class="container" align='center'>
+      <div class="jumbotron">
+      <h1>Welcome to Connect Four!</h1>
+      <h2>The object of this game is to connect four of your chips in a row!</h2>
+      <h3>Let's get started!</h3>
+      </div>
+
+
+          <table class="board">
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+      </table>
+
+
+    </div>
+
+
+    <style>
+
+    .board button {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border-radius: 50%;
+    border: 4px solid black;
+    margin: 1px;
+    }
+
+    @keyframes bg_color {
+          0%  {background-color:#f9ad98;}
+         50%  {background-color:#f8ff84;}
+         75%  {background-color:#83ff9c;}
+        100%  {background-color:#f9ad98;}
+    }
+
+      body{
+        background: #f9ad98;
+        animation-name: bg_color;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }
+
+    </style>
+
+
+    </script>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  var player1 = prompt("Player One: Enter Your Name , you will be Blue");
+  var player1Color = 'rgb(86, 151, 255)';
+
+  var player2 = prompt("Player Two: Enter Your Name, you will be Red");
+  var player2Color = 'rgb(237, 45, 73)';
+
+  var game_on = true;
+  var table = $('table tr');
+
+  function reportWin(rowNum,colNum) {
+    console.log("You won starting at this row,col");
+    console.log(rowNum);
+    console.log(colNum);
+  }
+  // Change button color
+  function changeColor(rowIndex,colIndex,color) {
+    return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color',color);
+  }
+
+  // Report Back to current color of a button
+  function returnColor(rowIndex,colIndex) {
+    return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color');
+  }
+
+  // Take in column index, returns bottom row that is still gray
+  function checkBottom(colIndex) {
+    var colorReport = returnColor(5,colIndex);
+    for (var row = 5; row > -1; row--) {
+      colorReport = returnColor(row,colIndex);
+      if (colorReport === 'rgb(128, 128, 128)') {
+        return row
+      }
+    }
+  }
+
+
+  function colorMatchCheck(one,two,three,four){
+    return (one===two && one===three && one===four && one !== 'rgb(128, 128, 128)' && one !== undefined);
+  }
+
+  // Check Horizontal Wins
+  function horizontalWinCheck() {
+    for (var row = 0; row < 6; row++) {
+      for (var col = 0; col < 4; col++) {
+        if (colorMatchCheck(returnColor(row,col), returnColor(row,col+1) ,returnColor(row,col+2), returnColor(row,col+3))) {
+          console.log('horiz');
+          reportWin(row,col);
+          return true;
+        }else {
+          continue;
+        }
+      }
+    }
+  }
+
+  // Check Vertical Wins
+  function verticalWinCheck() {
+    for (var col = 0; col < 7; col++) {
+      for (var row = 0; row < 3; row++) {
+        if (colorMatchCheck(returnColor(row,col), returnColor(row+1,col) ,returnColor(row+2,col), returnColor(row+3,col))) {
+          console.log('vertical');
+          reportWin(row,col);
+          return true;
+        }else {
+          continue;
+        }
+      }
+    }
+  }
+
+  // Check Diagonal Wins
+  function diagonalWinCheck() {
+    for (var col = 0; col < 5; col++) {
+      for (var row = 0; row < 7; row++) {
+        if (colorMatchCheck(returnColor(row,col), returnColor(row+1,col+1) ,returnColor(row+2,col+2), returnColor(row+3,col+3))) {
+          console.log('diag');
+          reportWin(row,col);
+          return true;
+        }else if (colorMatchCheck(returnColor(row,col), returnColor(row-1,col+1) ,returnColor(row-2,col+2), returnColor(row-3,col+3))) {
+          console.log('diag');
+          reportWin(row,col);
+          return true;
+        }else {
+          continue;
+        }
+      }
+    }
+  }
+
+  // Game End
+  function gameEnd(winningPlayer) {
+    for (var col = 0; col < 7; col++) {
+      for (var row = 0; row < 7; row++) {
+        $('h3').fadeOut('fast');
+        $('h2').fadeOut('fast');
+        $('h1').text(winningPlayer+" has won! Refresh your browser to play again!").css("fontSize", "50px")
+      }
+    }
+  }
+
+  // Start with Player One
+  var currentPlayer = 1;
+  var currentName = player1;
+  var currentColor = player1Color;
+
+  // Start with Player One
+  $('h3').text(player1+": it is your turn, please pick a column to drop your blue chip.");
+
+  $('.board button').on('click',function() {
+
+    // Recognize what column was chosen
+    var col = $(this).closest("td").index();
+
+    // Get back bottom available row to change
+    var bottomAvail = checkBottom(col);
+
+    // Drop the chip in that column at the bottomAvail Row
+    changeColor(bottomAvail,col,currentColor);
+
+    // Check for a win or a tie.
+    if (horizontalWinCheck() || verticalWinCheck() || diagonalWinCheck()) {
+      gameEnd(currentName);
+    }
+
+    // If no win or tie, continue to next player
+    currentPlayer = currentPlayer * -1 ;
+
+    // Re-Check who the current Player is.
+    if (currentPlayer === 1) {
+      currentName = player1;
+      $('h3').text(currentName+": it is your turn, please pick a column to drop your blue chip.");
+      currentColor = player1Color;
+    }else {
+      currentName = player2
+      $('h3').text(currentName+": it is your turn, please pick a column to drop your red chip.");
+      currentColor = player2Color;
+    }
+
+  })
+
+  </script>
+
+
+
+  </body>
+</html>
